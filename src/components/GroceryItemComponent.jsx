@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 
-
-const GroceryItemComponent = ({ item }) => {
+const GroceryItemComponent = ({ item, handleEditItem }) => {
   const [isEditing, setIsEditing] = useState(false);
-
   const [newItem, setNewItem] = useState(item.name);
+
+  const onEdit = () => {
+    handleEditItem(item.id, newItem);
+    setIsEditing(false);
+
+    //check later********
+    //setNewItem("");
+  };
+
   return (
     <>
       <li>
@@ -19,7 +26,15 @@ const GroceryItemComponent = ({ item }) => {
         )}
 
         <div>
-          <button className="btn-edit">Edit</button>
+          <button
+            onClick={() => {
+              isEditing ? onEdit() : setIsEditing(true);
+            }}
+            className="btn-edit"
+          >
+            {isEditing ? "Save" : "Edit"}
+          </button>
+
           <button className="btn-delete">Delete</button>
         </div>
       </li>

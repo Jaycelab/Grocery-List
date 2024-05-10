@@ -12,9 +12,22 @@
 - Passing an index is not necessary because we are using the unique id
 - uuid package to generate unique id
 
-
-*ADD/EDIT/DELETE*
+*ADD*
 - HandleAddItem function to add the item to the groceryItems array
 - Spread operator can be used  to add the item to the groceryItems array
 - Adding items to the groceryItems array using uuid to generate a unique id
-- Passing the item to the GroceryItem component and decronstructing the item to get the id and item.
+- Passing the item to the GroceryItem component and decronstructing the item to get the id and item.== "Edit"
+
+*EDIT*
+- Edit logic using onClick event to set the setIsEditing state to true. The button will display if isEditing is true == "Save" and if false 
+- If isEditing is true, run onEdit function to edit the item. If false, set the isEditing state to true
+- onEdit function to check if value is empty and if not, set the item to the newInput value
+- HandleAddItem function accepts id and name as arguments to add the item to the groceryItems array object
+- handleEditItem will passed and deconstructed from the GroceryItemComponent
+- onEdit will be passed to the GroceryItem component to handle the edit logic and update newItem
+- handleEditItem function to update the item in the groceryItems array using map and spread operator to loop through the array and check if   the id matches the item id. If it does, update the item name to the newInput value
+- setIsEditing to false to reset the state to false after editing the item
+- setNewItem to empty string to reset the input field after editing the item
+
+*UPDATE*
+- setGroceryItems to the updated groceryItems array

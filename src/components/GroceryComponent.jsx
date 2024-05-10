@@ -10,6 +10,18 @@ const GroceryComponent = () => {
     setGroceryItems([...groceryItems, { id: uuid(), name: item }]);
   };
 
+  const handleEditItem = (id, newItem) => {
+    const updatedGroceryItems = groceryItems.map((item) => {
+      if (item.id === id) {
+        return { ...item, name: newItem };
+      }
+
+      return item;
+    });
+    //useState is updated with the updatedGroceryItems array
+    setGroceryItems(updatedGroceryItems);
+  };
+
   return (
     <div className="grocery-container">
       <h1>Grocery Shopping List</h1>
@@ -28,7 +40,11 @@ const GroceryComponent = () => {
       </div>
       <ul className="grocery-list">
         {groceryItems.map((item) => (
-          <GroceryItemComponent key={item.id} item={item} />
+          <GroceryItemComponent
+            key={item.id}
+            item={item}
+            handleEditItem={handleEditItem}
+          />
         ))}
       </ul>
     </div>
