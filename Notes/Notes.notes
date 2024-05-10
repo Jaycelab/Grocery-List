@@ -49,4 +49,9 @@
 - returns a p tag with a message if the groceryItems array is empty. If not, returns null. setErrors is set to empty string once item has been added
 - onEdit ifsetatement to display error if item is empty. If not, setErrors to empty string
 
-*SUCCESS*
+*DEPLOYMENT*
+// github pages
+- npm install gh-pages --save-dev
+- base: "/<repo-name> /", inside defineConfig
+- "homepage": "https://<username>.github.io/<repo-name>/", as property
+- "predeploy": "npm run build", "deploy": "gh-pages -d dist", inside scripts
