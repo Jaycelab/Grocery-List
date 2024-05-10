@@ -1,0 +1,20 @@
+*STATE*
+- Define state of component input field by declaring a variable to track the value of the input field (list of groceries to be added)
+- Item state to empty string to track the input value
+- GroceryItems state to empty array to track the grocery items
+- Input container for input and button with value === item and onChange event to setItem will automatically changes state when the input value changes
+- isEditing state to false to track if the user is editing an item and newInput state to item.name to track the new input value with the display of the item object name
+
+*IF/ELSE STATE*
+- If isEditing is True, display the input field with the value of newItem. If false, display the item name only
+
+*UUID*
+- Passing an index is not necessary because we are using the unique id
+- uuid package to generate unique id
+
+
+*ADD/EDIT/DELETE*
+- HandleAddItem function to add the item to the groceryItems array
+- Spread operator can be used  to add the item to the groceryItems array
+- Adding items to the groceryItems array using uuid to generate a unique id
+- Passing the item to the GroceryItem component and decronstructing the item to get the id and item.
