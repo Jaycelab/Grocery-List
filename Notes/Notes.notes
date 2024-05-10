@@ -31,3 +31,22 @@
 
 *UPDATE*
 - setGroceryItems to the updated groceryItems array
+
+*DELETE*
+- filteredItems function to filter out the item to be deleted from the groceryItems array.
+- if itemId does not match the filtered grocery items, removes the item from the array
+- setGroceryItems to the filteredItems array
+- onDelete function to delete the item from the groceryItems array and passed as a prop to onedit function
+- GroceryItemComponent deconstructed onDelete from props and passed to the delete button onClick event
+
+*CLEAR*
+- Clear all items from the groceryItems array using the clearItems function if the groceryItems array is not empty
+- Will display the clear button if the groceryItems array is not empty and null if empty
+- clearItems function will set additem to empty string
+
+*ERROR*
+- -useRef to create a reference to the input field to focus on the input field when the page loads
+- returns a p tag with a message if the groceryItems array is empty. If not, returns null. setErrors is set to empty string once item has been added
+- onEdit ifsetatement to display error if item is empty. If not, setErrors to empty string
+
+*SUCCESS*
