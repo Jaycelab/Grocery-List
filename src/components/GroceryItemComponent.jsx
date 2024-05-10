@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
-const GroceryItemComponent = ({ item, handleEditItem }) => {
+const GroceryItemComponent = ({ item, handleEditItem, handleDeleteItem }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newItem, setNewItem] = useState(item.name);
+  const [errors, setErrors] = useState("");
 
   const onEdit = () => {
-    handleEditItem(item.id, newItem);
-    setIsEditing(false);
+    if (newItem) {
+      handleEditItem(item.id, newItem);
+      setIsEditing(false);
+      setErrors("");
+    } else {
+      setErrors("Grocery item cannot be empty.");
+    }
 
     //check later********
     //setNewItem("");
@@ -35,9 +41,15 @@ const GroceryItemComponent = ({ item, handleEditItem }) => {
             {isEditing ? "Save" : "Edit"}
           </button>
 
-          <button className="btn-delete">Delete</button>
+          <button
+            onClick={() => handleDeleteItem(item.id)}
+            className="btn-delete"
+          >
+            Delete
+          </button>
         </div>
       </li>
+      {errors ? <p className="errors">{errors}</p> : null}
     </>
   );
 };

@@ -1,1 +1,1 @@
-✨ React practice ✨
+📖 React practice 📖
